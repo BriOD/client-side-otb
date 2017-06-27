@@ -50,7 +50,7 @@ export default [
             "itemPrice": "7.99"
           }
         ]
-      }
+      },
       {
         "sectionId": 3,
         "sectionName": "Entrees",
@@ -128,7 +128,7 @@ export default [
             "itemPrice": "7.99"
           }
         ]
-      }
+      },
       {
         "sectionId": 6,
         "sectionName": "Entrees",

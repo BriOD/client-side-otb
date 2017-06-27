@@ -1,16 +1,12 @@
 import React, { Component } from 'react';
+import customData from '../data/menus.js';
 
 class DinnerMenu extends Component{
-  constructor(){
-    super();
-    this.state = {
-      menuData: {}
-    }
-  }
+  
   render(){
     return(
       <div>
-        <h1> hello </h1>
+        <h1>  </h1>
       </div>
     );
   }
