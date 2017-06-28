@@ -35,4 +35,4 @@ class MenuItemForm extends React.Component {
 
 }
 
-export default MenuItemFrom;
+export default MenuItemForm;
