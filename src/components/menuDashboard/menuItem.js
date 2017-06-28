@@ -6,14 +6,12 @@ class MenuItem extends React.Component {
       <div className='ui centered card'>
         <div className='content'>
           <div className='header'>
-            {this.props.title}
+            {this.props.title}<span>...{this.props.price}</span>
           </div>
           <div className='meta'>
             {this.props.description}
           </div>
-          <div className='meta'>
-            {this.props.price}
-          </div>
+
           <div className='extra content'>
             <span className='right floated edit icon'>
               <i className='edit icon' />
