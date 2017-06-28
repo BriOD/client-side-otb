@@ -7,9 +7,11 @@ class MenuItemsDashboard extends React.Component {
     return (
       <div className='ui three column centered grid'>
         <div className='column'>
+
           <EditableMenuItemList />
           <ToggleableMenuItemForm
             isOpen={true}
+            // used to determine weather to render a '+' or a MenuItemFrom
           />
         </div>
       </div>

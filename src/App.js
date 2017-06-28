@@ -13,7 +13,6 @@ import MenuItemsDashboard from './components/menuDashboard/menuItemsDashboard';
 
 class App extends Component {
 
-  }
 
   render() {
     return (
