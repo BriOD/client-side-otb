@@ -44,10 +44,30 @@ class MenuItemsDashboard extends Component {
     this.createMenuItem(menuItem);
   };
 
+  handleEditFormSubmit = (attrs) => {
+    this.updateMenuItem(attrs);
+  };
+
   createMenuItem = (menuItem) => {
     const m = newMenuItem(menuItem);
     this.setState({
       menuItems: this.state.menuItems.concat(m),
+    });
+  };
+
+  updateMenuItem = (attrs) => {
+    this.setState({
+      menuItems: this.state.menuItems.map((menuItem) => {
+        if (menuItem.id === attrs.id) {
+          return Object.assign({}, menuItem, {
+            title: attrs.title,
+            description: attrs.description,
+            price: attrs.price,
+          });
+        } else {
+          return menuItem;
+        }
+      }),
     });
   };
 
