@@ -31,3 +31,7 @@
     -MenuItem data will be owned and managed by MenuItemsDashboard.
     -Each EditableMenuItem will manage the state of its MenuItem form.
     -The ToggleableMenuItemForm will manage the state of its form visibilty.
+
+# Inverse Data Flow:
+  -MenuItemForm needs to propagate create and update events. Both events will eventually reach MenuItemsDashboard.
+  -MenuItem needs to handle delete and edit clicks.
