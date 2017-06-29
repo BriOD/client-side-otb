@@ -9,23 +9,47 @@ class EditableMenuItem extends Component {
     editFromOpen: false,
   };
 
+  handleEditClcik = () => {
+    this.openForm();
+  };
+
+  handleFormClose = () => {
+    this.closeForm();
+  };
+
+  handleSubmit = (menuItem) => {
+    this.props.onFormSubmit(menuItem);
+    this.closeForm();
+  };
+
+  closeForm = () => {
+    this.setState({ editFormOpen: false });
+  };
+
+  openForm = () => {
+    this.setState({ editFormOpen: true });
+  };
+
   render() {
     if (this.props.editFormOpen) {
       return (
         <MenuItemForm
-        id={this.props.id}
+          id={this.props.id}
           title={this.props.title}
           description={this.props.description}
           price={this.props.price}
+          onFormSubmit={this.handleSubmit}
+          onFormClose={this.handleFormClose}
         />
       );
     } else {
       return (
         <MenuItem
-        id={this.props.id}
-        title={this.props.title}
-        description={this.props.description}
-        price={this.props.price}
+          id={this.props.id}
+          title={this.props.title}
+          description={this.props.description}
+          price={this.props.price}
+          onEditClcik={this.handleEditClick}
         />
       );
     }
