@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import cuid from 'cuid';
+
 import EditableMenuItemList from './editableMenuItemsList';
 import ToggleableMenuItemForm from './toggleableMenuItemFrom'
 
