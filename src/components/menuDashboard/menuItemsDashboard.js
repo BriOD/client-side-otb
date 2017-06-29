@@ -4,7 +4,6 @@ import cuid from 'cuid';
 import EditableMenuItemList from './editableMenuItemsList';
 import ToggleableMenuItemForm from './toggleableMenuItemFrom'
 
-
 class MenuItemsDashboard extends Component {
   state = {
     menuItems: [
@@ -40,6 +39,20 @@ class MenuItemsDashboard extends Component {
       }
     ]
   }
+
+  handleCreateFormSubmit = (menuItem) => {
+    this.createMenuItem(menuItem);
+  };
+
+  createMenuItem = (menuItem) => {
+    const m = newMenuItem(menuItem);
+    this.setState({
+      menuItems: this.state.menuItems.concat(m),
+    });
+  };
+
+
+
   render() {
     return (
       <div className="dashboard">
@@ -50,13 +63,24 @@ class MenuItemsDashboard extends Component {
               menuItems={this.state.menuItems}
             />
             <ToggleableMenuItemForm
+              onFormSubmit={this.handleCreateFormSubmit}
             />
           </div>
         </div>
       </div>
     );
-  }
+  };
 
+}
+
+function newMenuItem(attrs) {
+  const menuItem = {
+    title: attrs.title,
+    description: attrs.description,
+    price: attrs.price,
+    id: cuid(),
+  };
+  return menuItem;
 }
 
 export default MenuItemsDashboard;

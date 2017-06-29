@@ -10,20 +10,20 @@ class MenuItemForm extends Component {
   // those props would be undefined. In that case, we initialize to a blank string
 
   handleTitleChange = (e) => {
-    this.setState({ title: e.target.vale });
+    this.setState({ title: e.target.value });
   };
 
   handleDescriptionChange = (e) => {
-    this.setState({ description: e.target.vale });
+    this.setState({ description: e.target.value });
   };
 
   handlePriceChange = (e) => {
-    this.setState({ price: e.target.vale });
+    this.setState({ price: e.target.value });
   };
 
   handleSubmit = () => {
     this.props.onFormSubmit({
-      id: this.props.id.
+      id: this.props.id,
       title: this.state.title,
       description: this.state.description,
       price: this.state.price
