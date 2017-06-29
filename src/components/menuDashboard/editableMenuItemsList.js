@@ -3,20 +3,18 @@ import EditableMenuItem from './editableMenuItem'
 
 class EditableMenuItemList extends Component {
   render() {
+    const menuItems = this.props.menuItems.map((menuItem) => (
+      <EditableMenuItem
+        key={menuItem.id}
+        id={menuItem.id}
+        title={menuItem.title}
+        description={menuItem.description}
+        price={menuItem.price}
+      />
+    ))
     return (
       <div>
-        <EditableMenuItem
-          title='Salmon'
-          description='Whatever they say about salmon'
-          price='14.95'
-          editFormOpen={false}
-        />
-        <EditableMenuItem
-          title='Lasagna'
-          description='Whatever they say about lasagna'
-          price='12.99'
-          editFormOpen={true}
-        />
+        {menuItems}
       </div>
     );
   }
