@@ -10,10 +10,22 @@ class ToggleableMenuItemForm extends Component {
     this.setState({ isOpen: true });
   };
 
+  handleFormClose = () => {
+    this.setState({ isOpen: false });
+  };
+
+  handleFormSubmit = (menuItem) => {
+    this.props.onFormSubmit(menuItem);
+    this.setState({ isOpen: false });
+  }
+
   render() {
     if (this.state.isOpen) {
       return (
-        <MenuItemForm />
+        <MenuItemForm
+          onFormSubmit={this.handleFormSubmit}
+          onFormClose={this.handleFormClose}
+       />
       );
     } else {
       return (
