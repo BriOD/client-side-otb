@@ -11,6 +11,7 @@ class EditableMenuItemList extends Component {
         description={menuItem.description}
         price={menuItem.price}
         onFormSubmit={this.props.onFormSubmit}
+        onTrashClick={this.props.onTrashClick}
       />
     ))
     return (

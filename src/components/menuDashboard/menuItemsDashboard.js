@@ -48,10 +48,20 @@ class MenuItemsDashboard extends Component {
     this.updateMenuItem(attrs);
   };
 
+  handleTrashClcik = (menuItemId) => {
+    this.deleteMenuItem(menuItemId);
+  };
+
   createMenuItem = (menuItem) => {
     const m = newMenuItem(menuItem);
     this.setState({
       menuItems: this.state.menuItems.concat(m),
+    });
+  };
+
+  deleteMenuItem = (menuItemId) => {
+    this.setState({
+      menuItems: this.state.menuItems.filter(m => m.id !== menuItemId),
     });
   };
 
@@ -81,6 +91,8 @@ class MenuItemsDashboard extends Component {
 
             <EditableMenuItemList
               menuItems={this.state.menuItems}
+              onFormSubmit={this.handleEditFormSubmit}
+              onTrashClick={this.handleTrashClcik}
             />
             <ToggleableMenuItemForm
               onFormSubmit={this.handleCreateFormSubmit}

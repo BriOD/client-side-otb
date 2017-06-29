@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 
 class MenuItem extends Component {
+  handleTrashClcik = () => {
+    this.props.onTrashClick(this.props.id);
+  };
+
   render() {
     return (
       <div className='ui centered card'>
@@ -13,15 +17,18 @@ class MenuItem extends Component {
           </div>
 
           <div className='extra content'>
-            <span
+            <button
               className='right floated edit icon'
               onClick={this.props.onEditClcik}
             >
               <i className='edit icon' />
-            </span>
-            <span className='right floated trash icon'>
+            </button>
+            <button
+              className='right floated trash icon'
+              onClick={this.handleTrashClcik}
+            >
               <i className='trash icon' />
-            </span>
+            </button>
           </div>
         </div>
       </div>

@@ -6,7 +6,7 @@ import MenuItem from './menuItem';
 
 class EditableMenuItem extends Component {
   state = {
-    editFromOpen: false,
+    editFromOpen: true,
   };
 
   handleEditClcik = () => {
@@ -31,7 +31,7 @@ class EditableMenuItem extends Component {
   };
 
   render() {
-    if (this.props.editFormOpen) {
+    if (this.state.editFormOpen) {
       return (
         <MenuItemForm
           id={this.props.id}
@@ -49,7 +49,8 @@ class EditableMenuItem extends Component {
           title={this.props.title}
           description={this.props.description}
           price={this.props.price}
-          onEditClcik={this.handleEditClick}
+          onEditClick={this.handleEditClick}
+          onTrashClick={this.props.onTrashClick}
         />
       );
     }
