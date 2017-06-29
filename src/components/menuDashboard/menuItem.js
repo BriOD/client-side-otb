@@ -13,7 +13,10 @@ class MenuItem extends Component {
           </div>
 
           <div className='extra content'>
-            <span className='right floated edit icon'>
+            <span
+              className='right floated edit icon'
+              onClick={this.props.onEditClcik}
+            >
               <i className='edit icon' />
             </span>
             <span className='right floated trash icon'>
