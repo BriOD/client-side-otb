@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import EditableMenuItem from './editableMenuItem'
 
-class EditableMenuItemList extends React.Component {
+class EditableMenuItemList extends Component {
   render() {
     return (
       <div>

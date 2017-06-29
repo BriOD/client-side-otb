@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class MenuItemForm extends React.Component {
+class MenuItemForm extends Component {
   render() {
     const submitText = this.props.title ? 'Update' : 'Create';
     return (

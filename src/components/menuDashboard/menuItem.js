@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class MenuItem extends React.Component {
+class MenuItem extends Component {
   render() {
     return (
       <div className='ui centered card'>

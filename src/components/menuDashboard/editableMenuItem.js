@@ -4,7 +4,7 @@ import MenuItem from './menuItem';
 
 // returns either a MenuItemFrom or a MenuItem based on the prop editFromOpen
 
-class EditableMenuItem extends React.Component {
+class EditableMenuItem extends Component {
   render() {
     if (this.props.editFormOpen) {
       return (

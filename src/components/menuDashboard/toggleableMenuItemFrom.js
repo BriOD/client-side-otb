@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import MenuItemForm from './menuItemForm'
 
-class ToggleableMenuItemForm extends React.Component {
+class ToggleableMenuItemForm extends Component {
   render() {
     if (this.props.isOpen) {
       return (
