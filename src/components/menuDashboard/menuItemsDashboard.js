@@ -50,8 +50,6 @@ class MenuItemsDashboard extends Component {
               menuItems={this.state.menuItems}
             />
             <ToggleableMenuItemForm
-              // isOpen={false}
-              // used to determine weather to render a '+' or a MenuItemFrom
             />
           </div>
         </div>
