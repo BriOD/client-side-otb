@@ -48,7 +48,7 @@ class MenuItemsDashboard extends Component {
     this.updateMenuItem(attrs);
   };
 
-  handleTrashClcik = (menuItemId) => {
+  handleTrashClick = (menuItemId) => {
     this.deleteMenuItem(menuItemId);
   };
 
@@ -92,7 +92,7 @@ class MenuItemsDashboard extends Component {
             <EditableMenuItemList
               menuItems={this.state.menuItems}
               onFormSubmit={this.handleEditFormSubmit}
-              onTrashClick={this.handleTrashClcik}
+              onTrashClick={this.handleTrashClick}
             />
             <ToggleableMenuItemForm
               onFormSubmit={this.handleCreateFormSubmit}

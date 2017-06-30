@@ -9,7 +9,7 @@ class EditableMenuItem extends Component {
     editFromOpen: true,
   };
 
-  handleEditClcik = () => {
+  handleEditClick = () => {
     this.openForm();
   };
 

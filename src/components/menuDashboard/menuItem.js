@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 class MenuItem extends Component {
-  handleTrashClcik = () => {
+  handleTrashClick = () => {
     this.props.onTrashClick(this.props.id);
   };
 
@@ -19,13 +19,13 @@ class MenuItem extends Component {
           <div className='extra content'>
             <button
               className='right floated edit icon'
-              onClick={this.props.onEditClcik}
+              onClick={this.props.onEditClick}
             >
               <i className='edit icon' />
             </button>
             <button
               className='right floated trash icon'
-              onClick={this.handleTrashClcik}
+              onClick={this.handleTrashClick}
             >
               <i className='trash icon' />
             </button>
