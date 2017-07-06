@@ -1,34 +1,10 @@
-export default function() {
-  return [
-    {
-      title: 'Creamy Winter Vegetable Soup',
-      description: "lots of winter vegetables cooked in chicken stock, then blended. The soup's special finishing touch comes from cream and a spoonful of mustard",
-      price: '12.35',
-      id: "1"
-    },
-    {
-      title: 'Gravlax',
-      description: "Gravlax is a Nordic speciality and consists of boned salmon dry-cured overnight in salt and sugar. The cured salmon can be eaten like smoked salmon, just with a trickle of lemon juice, or with a light sauce of cream cheese and herbs.",
-      price: '22.85',
-      id: "2"
-    },
-    {
-      title: '6 OZ. CENTER-CUT SIRLOIN',
-      description: "Center-cut for tenderness. Lean, hearty and full of flavor",
-      price: '17.68',
-      id: "3"
-    },
-    {
-      title: 'GRILLED CHICKEN ON THE BARBIE',
-      description: "Seasoned and wood-fire grilled chicken breast.",
-      price: '14.35',
-      id: "4"
-    },
-    {
-      title: 'BONE-IN NATURAL CUT RIBEYE',
-      description: "Bone-in and extra marbled for maximum tenderness. Seasoned and wood-fire grilled over oak.",
-      price: '22.35',
-      id: "5"
-    }
-  ]
+import { FETCH_MENU_ITEMS } from '../actions'
+
+export default function(state = [], action) {
+  switch (action.type) {
+    case FETCH_MENU_ITEMS:
+
+    default:
+      return state;
+  }
 }
