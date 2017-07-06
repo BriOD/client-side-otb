@@ -6,7 +6,7 @@ export function fetchMenuItems() {
   const request = axios.get(`http://localhost:3001/api/menu_items`)
 
   return {
-    type:  FETCCH_MENU_ITEMS,
+    type:  FETCH_MENU_ITEMS,
     payload: request
   };
 }
