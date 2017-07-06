@@ -5,6 +5,11 @@ import EditableMenuItemList from './editableMenuItemsList';
 import ToggleableMenuItemForm from './toggleableMenuItemFrom'
 
 class MenuItemsDashboard extends Component {
+  constructor(props){
+    super(props);
+
+    this.state = [];
+  }
 
 
   // handleCreateFormSubmit = (menuItem) => {
