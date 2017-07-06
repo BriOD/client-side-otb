@@ -10,7 +10,7 @@ class MenuItemsDashboard extends Component {
 
     componentDidMount(){
       this.props.fetchMenuItems();
-    }  
+    }
 
 
   render() {
@@ -19,14 +19,6 @@ class MenuItemsDashboard extends Component {
         <div className='ui three column centered grid'>
           <div className='column'>
 
-            <EditableMenuItemList
-              menuItems={this.props.menuItems}
-              onFormSubmit={this.handleEditFormSubmit}
-              onTrashClick={this.handleTrashClick}
-            />
-            <ToggleableMenuItemForm
-              onFormSubmit={this.handleCreateFormSubmit}
-            />
           </div>
         </div>
       </div>
