@@ -8,7 +8,7 @@
 
 # What should be stateful?
   -MenuItemsDashboard:
-    -declares two child components. It sets one prop, which it the isOpen boolean passed down to ToggleableMenuItemForm
+    -declares two child components. It sets one prop, which is the isOpen boolean passed down to ToggleableMenuItemForm
     -isOpen boolean for ToggleableMenuItemForm. Stateful. The data is defined here. It changes over time. And it cannot be computed from other state or props.
 
   -EditableMenuItemsList:
