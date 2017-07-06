@@ -1,34 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import cuid from 'cuid';
-
 import EditableMenuItemList from './editableMenuItemsList';
 import ToggleableMenuItemForm from './toggleableMenuItemFrom'
 
 class MenuItemsDashboard extends Component {
 
-  renderMenuItem() {
-    return this.props.menuItems.map((mi) => {
-      return (
-        <li key={mi.id} className='header'>{mi.title}</li>
-      );
-    });
-  }
 
-  render() {
-    return (
-      <ul className='container'>
-        {this.renderMenuItem()}
-      </ul>
-    )
-  }
-
-
-  // state = {
-  //   menuItems: []
-  // }
-  //
   // handleCreateFormSubmit = (menuItem) => {
   //   this.createMenuItem(menuItem);
   // };
@@ -72,25 +50,25 @@ class MenuItemsDashboard extends Component {
   //
   //
   //
-  // render() {
-  //   return (
-  //     <div className="dashboard">
-  //       <div className='ui three column centered grid'>
-  //         <div className='column'>
-  //
-  //           <EditableMenuItemList
-  //             menuItems={this.state.menuItems}
-  //             onFormSubmit={this.handleEditFormSubmit}
-  //             onTrashClick={this.handleTrashClick}
-  //           />
-  //           <ToggleableMenuItemForm
-  //             onFormSubmit={this.handleCreateFormSubmit}
-  //           />
-  //         </div>
-  //       </div>
-  //     </div>
-  //   );
-  // };
+  render() {
+    return (
+      <div className="dashboard">
+        <div className='ui three column centered grid'>
+          <div className='column'>
+
+            <EditableMenuItemList
+              menuItems={this.props.menuItems}
+              onFormSubmit={this.handleEditFormSubmit}
+              onTrashClick={this.handleTrashClick}
+            />
+            <ToggleableMenuItemForm
+              onFormSubmit={this.handleCreateFormSubmit}
+            />
+          </div>
+        </div>
+      </div>
+    );
+  };
 
 }
 
