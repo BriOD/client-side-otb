@@ -6,14 +6,14 @@ import EditableMenuItemList from './editableMenuItemsList';
 import ToggleableMenuItemForm from './toggleableMenuItemFrom'
 
 class MenuItemsDashboard extends Component {
-
-
-    componentDidMount(){
-      this.props.fetchMenuItems();
-    }
+  componentDidMount(){
+    this.props.fetchMenuItems();
+  }
 
 
   render() {
+    // console.log('props:', this.props)
+
     return (
       <div className="dashboard">
         <div className='ui three column centered grid'>
@@ -26,7 +26,7 @@ class MenuItemsDashboard extends Component {
   };
 
 }
-export default connect(null, {fetchMenuItems})(MenuItemsDashboard);
+export default connect(null, { fetchMenuItems })(MenuItemsDashboard);
 
 // function newMenuItem(attrs) {
 //   const menuItem = {
