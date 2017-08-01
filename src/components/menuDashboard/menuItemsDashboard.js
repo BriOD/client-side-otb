@@ -3,8 +3,9 @@ import _ from 'lodash';
 import { connect } from 'react-redux';
 import { fetchMenuItems } from '../../actions'
 
-import EditableMenuItemList from './editableMenuItemsList';
-import ToggleableMenuItemForm from './toggleableMenuItemFrom'
+import MenuItem from './menuItem';
+// import EditableMenuItemList from './editableMenuItemsList';
+// import ToggleableMenuItemForm from './toggleableMenuItemFrom'
 
 class MenuItemsDashboard extends Component {
   componentDidMount(){
@@ -14,7 +15,12 @@ class MenuItemsDashboard extends Component {
   renderMenuItems() {
     return _.map(this.props.menuItems, item => {
       return (
-        <h5 key={item.id}>{item.title}</h5>
+        <MenuItem
+          key={item.id}
+          title={item.title}
+          price={item.price}
+          description={item.description}
+        />
       )
     });
   }
