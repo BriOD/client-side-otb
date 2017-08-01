@@ -12,7 +12,7 @@ class MenuItemsDashboard extends Component {
 
 
   render() {
-    // console.log('props:', this.props)
+    console.log('props:', this.props.menuItems)
 
     return (
       <div className="dashboard">
@@ -26,7 +26,12 @@ class MenuItemsDashboard extends Component {
   };
 
 }
-export default connect(null, { fetchMenuItems })(MenuItemsDashboard);
+
+function mapStateToProps(state) {
+    return { menuItems: state.menuItems };
+}
+
+export default connect(mapStateToProps, { fetchMenuItems })(MenuItemsDashboard);
 
 // function newMenuItem(attrs) {
 //   const menuItem = {
