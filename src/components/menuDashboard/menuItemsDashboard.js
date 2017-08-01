@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import _ from 'lodash';
 import { connect } from 'react-redux';
 import { fetchMenuItems } from '../../actions'
 
@@ -10,15 +11,21 @@ class MenuItemsDashboard extends Component {
     this.props.fetchMenuItems();
   }
 
+  renderMenuItems() {
+    return _.map(this.props.menuItems, item => {
+      return (
+        <h5 key={item.id}>{item.title}</h5>
+      )
+    });
+  }
+
 
   render() {
-    console.log('props:', this.props.menuItems)
-
     return (
       <div className="dashboard">
         <div className='ui three column centered grid'>
           <div className='column'>
-
+            {this.renderMenuItems()}
           </div>
         </div>
       </div>
