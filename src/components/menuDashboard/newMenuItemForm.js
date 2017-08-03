@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Field, reduxForm } from 'redux-form';
 
 class NewMenuItemForm extends Component {
   render() {
@@ -8,4 +9,6 @@ class NewMenuItemForm extends Component {
   }
 }
 
-export default NewMenuItemForm;
+export default reducForm({
+    form: 'MenuItemNewForm'
+})(NewMenuItemForm);
