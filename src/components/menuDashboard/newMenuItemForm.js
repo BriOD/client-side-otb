@@ -12,6 +12,7 @@ class NewMenuItemForm extends Component {
           placeholder={field.placeholder}
           {...field.input}
         />
+        {field.meta.error}
       </div>
     );
   }
