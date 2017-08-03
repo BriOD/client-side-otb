@@ -11,6 +11,7 @@ import { BrowserRouter as Router, Route, Switch  } from 'react-router-dom';
 // import Menus from './data/menus.js';
 
 import MenuItemsDashboard from './components/menuDashboard/menuItemsDashboard';
+import NewMenuItemForm from './components/menuDashboard/newMenuItemForm';
 
 
 class App extends Component {
@@ -23,6 +24,7 @@ class App extends Component {
           <Header />
           <Switch>
             <Route exact path="/" component={MenuItemsDashboard} />
+            <Route exact path="/menu_items/new" component={NewMenuItemForm} />
           </Switch>
         </div>
       </Router>
