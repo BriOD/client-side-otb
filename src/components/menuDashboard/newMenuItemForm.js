@@ -48,8 +48,19 @@ function validate(values) {
   const errors = {};
 
   // validate the inputs from 'values'
+  if (!values.title) {
+    errors.title = "Please enter a title";
+  }
+  if (!values.description) {
+    errors.description = "Please enter a description";
+  }
+  if (!values.price) {
+    errors.price = "Please enter a price";
+  }
 
-  return errors; 
+  return errors;
+  // if we return an empty errors object, redux forms assumes that our form is working correctly
+  // if errors has any properties, redux form assumes the form is invalid, and will not submit
 
 }
 
