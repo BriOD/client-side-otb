@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import Header from './components/header';
+import { BrowserRouter as Router, Route, Switch  } from 'react-router-dom';
+
 
 // import DinnerMenu from './components/dinnerMenu';
 // import GoogleMap from './components/googleMap';
@@ -16,11 +18,14 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <Header />
-        <MenuItemsDashboard />
-
-      </div>
+      <Router>
+        <div className="App">
+          <Header />
+          <Switch>
+            <Route exact path="/" component={MenuItemsDashboard} />
+          </Switch>
+        </div>
+      </Router>
     );
   }
 }
