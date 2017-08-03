@@ -17,28 +17,37 @@ class NewMenuItemForm extends Component {
     );
   }
 
+  onSubmit(values) {
+    console.log(values);
+  }
+
   render() {
+    const { handleSubmit } = this.props;
+
     return (
-      <form className="ui form">
+      <form className="ui form" onSubmit={handleSubmit(this.onSubmit.bind(this))}>
         <Field
           label="Title"
           name="title"
           placeholder="Title"
           component={this.renderField}
-
         />
+
         <Field
           label="Description"
           name="description"
           placeholder="Description"
           component={this.renderField}
         />
+
         <Field
           label="Price"
           name="price"
           placeholder="Price"
           component={this.renderField}
         />
+
+        <button type="submit" className="positive ui button">Submit</button>
       </form>
     );
   }
