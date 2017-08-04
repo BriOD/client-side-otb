@@ -4,7 +4,8 @@ import '../../index.css'
 
 class NewMenuItemForm extends Component {
   renderField(field) {
-    const className = `form ${field.meta.touched && field.meta.error ? 'danger' : ''}`;
+    const { meta: { touched, error } } = field;
+    const className = `form ${touched && error ? 'danger' : ''}`;
 
     return (
       <div className={className}>
@@ -15,7 +16,7 @@ class NewMenuItemForm extends Component {
           {...field.input}
         />
         <div className="errors">
-          {field.meta.touched ? field.meta.error : ''}
+          {touched ? error : ''}
         </div>
       </div>
     );
