@@ -1,18 +1,20 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
+import '../../index.css'
 
 class NewMenuItemForm extends Component {
   renderField(field) {
     return (
-      <div className="field">
+      <div>
         <label>{field.label}</label>
         <input
-          className="field"
           type="text"
           placeholder={field.placeholder}
           {...field.input}
         />
-        {field.meta.touched ? field.meta.error : ''}
+        <div className="errors">
+          {field.meta.touched ? field.meta.error : ''}
+        </div>
       </div>
     );
   }
@@ -27,21 +29,21 @@ class NewMenuItemForm extends Component {
     return (
       <form className="ui form" onSubmit={handleSubmit(this.onSubmit.bind(this))}>
         <Field
-          label="Title"
+          // label="Title"
           name="title"
           placeholder="Title"
           component={this.renderField}
         />
 
         <Field
-          label="Description"
+          // label="Description"
           name="description"
           placeholder="Description"
           component={this.renderField}
         />
 
         <Field
-          label="Price"
+          // label="Price"
           name="price"
           placeholder="Price"
           component={this.renderField}
