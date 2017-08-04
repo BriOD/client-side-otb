@@ -7,3 +7,18 @@ body {
 .errors {
   color: red;
 }
+
+.danger {
+  border-style: solid;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+  border-right-width: 1px;
+  border-top-width: 1px;
+  border-color: red;
+}
+
+.form {
+  padding: 3px;
+  max-width: 1000px;
+
+}
