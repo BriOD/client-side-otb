@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
+import { Link } from 'react-router-dom';
 import '../../index.css'
 
 class NewMenuItemForm extends Component {
@@ -51,6 +52,7 @@ class NewMenuItemForm extends Component {
         />
 
         <button type="submit" className="positive ui button">Submit</button>
+        <Link to="/" className="ui red button">Cancel</Link>
       </form>
     );
   }
