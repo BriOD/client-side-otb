@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { createMenuItem } from '../../actions';
+
+
 import '../../index.css'
 
 class NewMenuItemForm extends Component {
@@ -24,7 +28,16 @@ class NewMenuItemForm extends Component {
   }
 
   onSubmit(values) {
-    console.log(values);
+    // console.log(this.props.history);
+    this.props.createMenuItem(values, () => {
+      this.props.history.push('/');
+      /*
+      automatically navigate to wherever we say.
+      inside a cb function so it only does so after new menu item is created
+      now we are passing this function to out action creator,
+      now we have to tell out action creator what to do with it
+      */
+    });
   }
 
   render() {
@@ -82,4 +95,12 @@ function validate(values) {
 export default reduxForm({
     validate,
     form: 'MenuItemNewForm' // this string must be unique. it identifies which form we a re dealing with
-})(NewMenuItemForm);
+})(
+  connect(null, { createMenuItem })(NewMenuItemForm)
+);
+
+/* STEPS FOR CALLING AN ACTION CREATOR FROM THIS FILE:
+  1) import connect helper from react-redux
+  2)import action creator that i created
+  3) the syntax to combine it with redux-form is a little weird.
+*/
