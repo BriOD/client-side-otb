@@ -2,6 +2,7 @@ import axios from 'axios';
 
 export const FETCH_MENU_ITEMS = 'fetch_menu_items';
 export const CREATE_MENU_ITEM = 'create_menu_item';
+export const DELETE_MENU_ITEM = 'delete_menu_item';
 
 export function fetchMenuItems() {
   const request = axios.get(`http://localhost:3001/api/menu_items`)
@@ -28,6 +29,6 @@ export function deleteMenuItem(id) {
 
   return {
     type: DELETE_MENU_ITEM,
-    payload: id
+    payload: request
   }
 }
