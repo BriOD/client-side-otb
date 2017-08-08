@@ -11,7 +11,6 @@ class MenuItemsDashboard extends Component {
   componentDidMount(){
     this.props.fetchMenuItems();
   }
-
   renderMenuItems() {
     return _.map(this.props.menuItems, item => {
       return (
@@ -28,6 +27,8 @@ class MenuItemsDashboard extends Component {
 
 
   render() {
+    // console.log("props:", this.props)
+
     return (
       <div className="dashboard">
         <div className='ui three column centered grid'>

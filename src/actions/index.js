@@ -38,6 +38,6 @@ export function deleteMenuItem(id) {
 
   return {
     type: DELETE_MENU_ITEM,
-    payload: request
+    payload: id
   }
 }
