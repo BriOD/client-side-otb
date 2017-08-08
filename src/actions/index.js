@@ -1,4 +1,6 @@
 import axios from 'axios';
+import fetch from 'isomorphic-fetch'
+
 
 export const FETCH_MENU_ITEMS = 'fetch_menu_items';
 export const CREATE_MENU_ITEM = 'create_menu_item';
@@ -25,7 +27,14 @@ export function createMenuItem(values, callback) {
 }
 
 export function deleteMenuItem(id) {
-  const request = axios.delete(`http://localhost:3001/api/menu_items/${id}`)
+  const headers = {
+    'Accept': 'application/json',
+    'Content-Type': 'application/json'
+  }
+  const request = fetch(`http://localhost:3001/api/menu_items/${id}`, {
+    method: 'DELETE',
+    headers: headers
+  })
 
   return {
     type: DELETE_MENU_ITEM,
