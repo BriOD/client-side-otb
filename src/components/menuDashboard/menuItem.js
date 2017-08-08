@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { deleteMenuItem } from '../../actions';
 
 class MenuItem extends Component {
   handleTrashClick = () => {
-    this.props.onTrashClick(this.props.id);
+    this.props.deleteMenuItem(this.props.id);
   };
 
   render() {
@@ -25,7 +27,7 @@ class MenuItem extends Component {
             </span>
             <span
               className='right floated trash icon'
-              // onClick={this.handleTrashClick}
+              onClick={this.handleTrashClick}
             >
               <i className='trash icon' />
             </span>
@@ -37,4 +39,4 @@ class MenuItem extends Component {
 
 }
 
-export default MenuItem;
+export default connect(null, { deleteMenuItem })(MenuItem);

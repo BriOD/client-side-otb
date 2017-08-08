@@ -22,3 +22,12 @@ export function createMenuItem(values, callback) {
     payload: request
   }
 }
+
+export function deleteMenuItem(id) {
+  const request = axios.delete(`http://localhost:3001/api/menu_items/${id}`)
+
+  return {
+    type: DELETE_MENU_ITEM,
+    payload: id
+  }
+}
