@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 
+
 class DinnerMenu extends Component{
 
   render(){
     return(
-      <div>
-        <h1> Dinner </h1>
-      </div>
+      <img className="ui medium rounded image" src="http://i.imgur.com/zx5FyUb.gif" />
+
     );
   }
 

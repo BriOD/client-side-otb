@@ -5,7 +5,7 @@ class LunchMenu extends Component{
   render(){
     return(
       <div>
-        <h1> Lunch </h1>
+        <img className="ui medium rounded image" src="http://i.imgur.com/DutrYOu.jpg" />
       </div>
     );
   }
