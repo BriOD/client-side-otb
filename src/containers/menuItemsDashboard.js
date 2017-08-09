@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
 import { connect } from 'react-redux';
-import { fetchMenuItems } from '../../actions'
+import { fetchMenuItems } from '../actions'
 
-import MenuItem from './menuItem';
+import MenuItem from '../components/menuItem';
 // import EditableMenuItemList from './editableMenuItemsList';
 // import ToggleableMenuItemForm from './toggleableMenuItemFrom'
 

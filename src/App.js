@@ -10,8 +10,8 @@ import { BrowserRouter as Router, Route, Switch  } from 'react-router-dom';
 
 // import Menus from './data/menus.js';
 
-import MenuItemsDashboard from './components/menuDashboard/menuItemsDashboard';
-import NewMenuItemForm from './components/menuDashboard/newMenuItemForm';
+import MenuItemsDashboard from './containers/menuItemsDashboard';
+import NewMenuItemForm from './containers/newMenuItemForm';
 
 
 class App extends Component {

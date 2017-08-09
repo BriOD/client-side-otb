@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { createMenuItem } from '../../actions';
+import { createMenuItem } from '../actions';
 
 
-import '../../index.css'
+import '../index.css'
 
 class NewMenuItemForm extends Component {
   renderField(field) {

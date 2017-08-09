@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { deleteMenuItem } from '../../actions';
+import { deleteMenuItem } from '../actions';
 
 class MenuItem extends Component {
   handleTrashClick = () => {

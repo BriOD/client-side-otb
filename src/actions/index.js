@@ -30,11 +30,12 @@ export function deleteMenuItem(id) {
   const headers = {
     'Accept': 'application/json',
     'Content-Type': 'application/json'
-  }
-  const request = fetch(`http://localhost:3001/api/menu_items/${id}`, {
+  };
+
+  fetch(`http://localhost:3001/api/menu_items/${id}`, {
     method: 'DELETE',
     headers: headers
-  })
+  });
 
   return {
     type: DELETE_MENU_ITEM,
