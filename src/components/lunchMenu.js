@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 
-class DinnerMenu extends Component{
+class LunchMenu extends Component{
 
   render(){
     return(
       <div>
-        <h1> Dinner </h1>
+        <h1> Lunch </h1>
       </div>
     );
   }
 
 }
 
-export default DinnerMenu;
+export default LunchMenu;

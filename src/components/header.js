@@ -15,7 +15,8 @@ class Header extends Component {
             <Link className="ui green basic button" to="/menu_items/new">
               New Menu Item
             </Link>
-            <button className="ui green basic button">Dinner</button>
+            <Link className="ui green basic button" to="/lunch">Lunch</Link>
+            <Link className="ui green basic button" to="/dinner">Dinner</Link>
             <button className="ui green basic button">Todays Specials</button>
           </div>
       </div>

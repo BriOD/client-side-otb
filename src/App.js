@@ -12,6 +12,8 @@ import { BrowserRouter as Router, Route, Switch  } from 'react-router-dom';
 
 import MenuItemsDashboard from './containers/menuItemsDashboard';
 import NewMenuItemForm from './containers/newMenuItemForm';
+import LunchMenu from './components/lunchMenu';
+import DinnerMenu from './components/dinnerMenu';
 
 
 class App extends Component {
@@ -26,6 +28,8 @@ class App extends Component {
           </div>
             <Switch>
               <Route exact path="/" component={MenuItemsDashboard} />
+              <Route exact path="/lunch" component={LunchMenu} />
+              <Route exact path="/dinner" component={DinnerMenu} />
               <Route exact path="/menu_items/new" component={NewMenuItemForm} />
             </Switch>
         </div>
