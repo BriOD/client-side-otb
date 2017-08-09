@@ -14,6 +14,7 @@ import MenuItemsDashboard from './containers/menuItemsDashboard';
 import NewMenuItemForm from './containers/newMenuItemForm';
 import LunchMenu from './components/lunchMenu';
 import DinnerMenu from './components/dinnerMenu';
+import Home from './components/home';
 
 
 class App extends Component {
@@ -27,7 +28,8 @@ class App extends Component {
             <Header />
           </div>
             <Switch>
-              <Route exact path="/" component={MenuItemsDashboard} />
+              <Route exact path="/" component={Home} />
+              <Route exact path="/specials" component={MenuItemsDashboard} />
               <Route exact path="/lunch" component={LunchMenu} />
               <Route exact path="/dinner" component={DinnerMenu} />
               <Route exact path="/menu_items/new" component={NewMenuItemForm} />
