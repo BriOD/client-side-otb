@@ -30,7 +30,7 @@ class NewMenuItemForm extends Component {
   onSubmit(values) {
     // console.log(this.props.history);
     this.props.createMenuItem(values, () => {
-      this.props.history.push('/');
+      this.props.history.push('/specials');
       /*
       automatically navigate to wherever we say.
       inside a cb function so it only does so after new menu item is created

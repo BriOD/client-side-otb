@@ -2,8 +2,11 @@ import React, { Component } from 'react';
 import _ from 'lodash';
 import { connect } from 'react-redux';
 import { fetchMenuItems } from '../actions'
+import { CSSTransitionGroup } from 'react-transition-group'
 
 import MenuItem from '../components/menuItem';
+
+import '../style/style.css'
 // import EditableMenuItemList from './editableMenuItemsList';
 // import ToggleableMenuItemForm from './toggleableMenuItemFrom'
 
@@ -28,12 +31,19 @@ class MenuItemsDashboard extends Component {
 
   render() {
     // console.log("props:", this.props)
+    const transitionOptions = {
+      transitionName: "fade",
+      transitionEnterTimeout: 500,
+      transitionLeaveTimeout: 500
+    };
 
     return (
       <div className="dashboard">
         <div className='ui three column centered grid'>
           <div className='column'>
-            {this.renderMenuItems()}
+            <CSSTransitionGroup {...transitionOptions}>
+                {this.renderMenuItems()}
+            </CSSTransitionGroup>
           </div>
         </div>
       </div>

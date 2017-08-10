@@ -3,7 +3,7 @@ import React from 'react';
 const LunchMenu = () => {
   return(
     <div>
-      <img className="ui massive image" src="http://i.imgur.com/DutrYOu.jpg" />
+      <img className="ui massive image" src="http://i.imgur.com/DutrYOu.jpg" alt=""/>
     </div>
   );
 }
