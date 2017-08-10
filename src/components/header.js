@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 
 class Header extends Component {
+  authButton() {
+    return <button className="ui green basic button">Sign In</button>
+  }
   render(){
     return(
         <div className="App-header">
@@ -13,6 +16,7 @@ class Header extends Component {
             <Link className="ui green basic button" to="/dinner">Dinner</Link>
             <Link className="ui green basic button" to="/specials">Todays Specials</Link>
             <Link className="ui green basic button" to="/menu_items/new">New Menu Item</Link>
+            {this.authButton()}
           </div>
       </div>
     );

@@ -7,8 +7,7 @@ import { CSSTransitionGroup } from 'react-transition-group'
 import MenuItem from '../components/menuItem';
 
 import '../style/style.css'
-// import EditableMenuItemList from './editableMenuItemsList';
-// import ToggleableMenuItemForm from './toggleableMenuItemFrom'
+
 
 class MenuItemsDashboard extends Component {
   componentDidMount(){
