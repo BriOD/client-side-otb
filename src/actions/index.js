@@ -5,6 +5,7 @@ import fetch from 'isomorphic-fetch'
 export const FETCH_MENU_ITEMS = 'fetch_menu_items';
 export const CREATE_MENU_ITEM = 'create_menu_item';
 export const DELETE_MENU_ITEM = 'delete_menu_item';
+export const CHANGE_AUTH = 'change_auth';
 
 export function fetchMenuItems() {
   const request = axios.get(`http://localhost:3001/api/menu_items`)
@@ -41,4 +42,11 @@ export function deleteMenuItem(id) {
     type: DELETE_MENU_ITEM,
     payload: id
   }
+}
+
+export function authenticate(isLoggedIn) {
+  return {
+    type: CHANGE_AUTH,
+    payload: isLoggedIn
+  };
 }
