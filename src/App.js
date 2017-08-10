@@ -15,6 +15,7 @@ import NewMenuItemForm from './containers/newMenuItemForm';
 import LunchMenu from './components/lunchMenu';
 import DinnerMenu from './components/dinnerMenu';
 import Home from './components/home';
+import requireAuth from './components/authenticateHOC'; //this is just the function from that file
 
 
 class App extends Component {
@@ -32,7 +33,7 @@ class App extends Component {
               <Route exact path="/specials" component={MenuItemsDashboard} />
               <Route exact path="/lunch" component={LunchMenu} />
               <Route exact path="/dinner" component={DinnerMenu} />
-              <Route exact path="/menu_items/new" component={NewMenuItemForm} />
+              <Route exact path="/menu_items/new" component={requireAuth(NewMenuItemForm)} />
             </Switch>
         </div>
       </Router>
