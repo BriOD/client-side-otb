@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 export default function(ComposedComponent) {
   class Authentication extends Component {
@@ -21,7 +21,6 @@ export default function(ComposedComponent) {
     }
 
     render() {
-      console.log(this.context.router);
       return <ComposedComponent {...this.props} />
     }
   }
