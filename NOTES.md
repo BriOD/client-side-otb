@@ -37,4 +37,8 @@
   -MenuItem needs to handle delete and edit clicks.
 
 
-  lecture 125
+  case types.UPDATE_CAT_SUCCESS:
+    return [
+      ...state.filter(cat => cat.id !== action.cat.id),
+      Object.assign({}, action.cat)
+    ]

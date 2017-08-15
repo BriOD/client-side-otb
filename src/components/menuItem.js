@@ -1,31 +1,33 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { deleteMenuItem } from '../actions';
+import { deleteMenuItem, likeMenuItem } from '../actions';
 
 class MenuItem extends Component {
+  constructor(props){
+    super(props)
+    this.state = {likes: this.props.likes}
+  }
 
   handleTrashClick = () => {
     this.props.deleteMenuItem(this.props.id);
   };
 
-  // handleLike = () => {
-  //   this.setState({likes: this.state.likes +1});
-  // };
+    // i want to change the value of the like, and then pass the new value to the update action
 
-  update = (id) => {
-    console.log('a')
+  // i might need a function that handles updating the menuItem, and then it calls the action
+  // to fire the API request
 
-    fetch(`http://localhost:3001/api/menu_items/56`)
-      .then(response => {
-        console.log('b')
-        return response.json()
-      })
-      .then(data => console.log("c", data))
 
-    console.log('d')
-  }
+  handleLike = () => {
+    const id = this.props.id
+    const likes = this.state.likes +1;
+    this.props.likeMenuItem(id, likes)
+  };
+
 
   render() {
+    console.log(this.state.likes)
+
     return (
       <div className='ui centered card'>
         <div className='content'>
@@ -37,7 +39,9 @@ class MenuItem extends Component {
           </div>
           <div className='meta'>
             {this.props.likes}
+            <bttn onClick={this.handleLike}><i className="empty star icon" /></bttn>
           </div>
+
 
           <div className='extra content'>
 
@@ -57,4 +61,6 @@ class MenuItem extends Component {
 
 }
 
-export default connect(null, { deleteMenuItem })(MenuItem);
+
+
+export default connect(null, { deleteMenuItem, likeMenuItem })(MenuItem);
