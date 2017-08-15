@@ -29,16 +29,16 @@ class NewMenuItemForm extends Component {
 
   onSubmit(values) {
     // console.log(this.props.history);
-    this.props.createMenuItem(values, () => {
-      this.props.history.push('/specials');
+    this.props.createMenuItem(values,
+      this.props.history);
       /*
       automatically navigate to wherever we say.
       inside a cb function so it only does so after new menu item is created
       now we are passing this function to out action creator,
       now we have to tell out action creator what to do with it
       */
-    });
-  }
+    };
+  
 
   render() {
     const { handleSubmit } = this.props;

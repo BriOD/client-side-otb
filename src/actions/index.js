@@ -17,9 +17,9 @@ export function fetchMenuItems() {
   };
 }
 
-export function createMenuItem(values, callback) {
+export function createMenuItem(values, history) {
   const request = axios.post(`http://localhost:3001/api/menu_items`, values)
-    .then(() => callback());
+    .then(() => history.push('/specials'));
 
   return {
     type: CREATE_MENU_ITEM,

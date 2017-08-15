@@ -10,6 +10,8 @@ import '../style/style.css'
 
 
 class MenuItemsDashboard extends Component {
+
+
   componentDidMount(){
     this.props.fetchMenuItems();
   }
@@ -22,6 +24,7 @@ class MenuItemsDashboard extends Component {
           title={item.title}
           price={item.price}
           description={item.description}
+          likes={item.likes}
         />
       )
     });
