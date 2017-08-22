@@ -3,10 +3,10 @@ import { connect } from 'react-redux';
 import { deleteMenuItem, likeMenuItem } from '../actions';
 
 class MenuItem extends Component {
-  constructor(props){
-    super(props)
-    this.state = {likes: this.props.likes}
-  }
+  // constructor(props){
+  //   super(props)
+  //   this.state = {likes: this.props.likes}
+  // }
 
   handleTrashClick = () => {
     this.props.deleteMenuItem(this.props.id);
@@ -20,14 +20,13 @@ class MenuItem extends Component {
 
   handleLike = () => {
     const id = this.props.id
-    const likes = this.state.likes +1;
+    const likes = this.props.likes +1;
     this.props.likeMenuItem(id, likes)
   };
 
 
   render() {
-    console.log(this.state.likes)
-
+    // console.log("props", this.props)
     return (
       <div className='ui centered card'>
         <div className='content'>
@@ -41,10 +40,7 @@ class MenuItem extends Component {
             {this.props.likes}
             <bttn onClick={this.handleLike}><i className="empty star icon" /></bttn>
           </div>
-
-
           <div className='extra content'>
-
             <span
               className='right floated trash icon'
               onClick={this.handleTrashClick}
@@ -52,15 +48,14 @@ class MenuItem extends Component {
               <i className='trash icon' />
             </span>
           </div>
-
         </div>
       </div>
     );
   }
-
-
 }
 
-
+// function mapStateToProps(state) {
+//     return { menuItems: state.menuItems };
+// }
 
 export default connect(null, { deleteMenuItem, likeMenuItem })(MenuItem);

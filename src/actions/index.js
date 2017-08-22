@@ -6,7 +6,7 @@ export const FETCH_MENU_ITEMS = 'fetch_menu_items';
 export const CREATE_MENU_ITEM = 'create_menu_item';
 export const DELETE_MENU_ITEM = 'delete_menu_item';
 export const CHANGE_AUTH = 'change_auth';
-export const UPDATE_LIKES = 'update-likes'
+export const UPDATE_LIKES = 'update_likes'
 
 export function fetchMenuItems() {
   const request = axios.get(`http://localhost:3001/api/menu_items`)
