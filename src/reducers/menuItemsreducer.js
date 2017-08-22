@@ -12,7 +12,6 @@ export default function(state = {}, action) {
       return newState;
 
     case UPDATE_LIKES:
-    console.log(state)
       const filteredState = state.filter(item => item.id !== action.payload.data.id)
       return [ ...filteredState, action.payload.data ];
 

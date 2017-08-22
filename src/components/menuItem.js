@@ -3,10 +3,6 @@ import { connect } from 'react-redux';
 import { deleteMenuItem, likeMenuItem } from '../actions';
 
 class MenuItem extends Component {
-  // constructor(props){
-  //   super(props)
-  //   this.state = {likes: this.props.likes}
-  // }
 
   handleTrashClick = () => {
     this.props.deleteMenuItem(this.props.id);
@@ -26,12 +22,11 @@ class MenuItem extends Component {
 
 
   render() {
-    // console.log("props", this.props)
     return (
       <div className='ui centered card'>
         <div className='content'>
           <div className='header'>
-            {this.props.title}<span>...{this.props.price}</span>
+            {this.props.title}<span>...${this.props.price}</span>
           </div>
           <div className='meta'>
             {this.props.description}
@@ -54,8 +49,5 @@ class MenuItem extends Component {
   }
 }
 
-// function mapStateToProps(state) {
-//     return { menuItems: state.menuItems };
-// }
 
 export default connect(null, { deleteMenuItem, likeMenuItem })(MenuItem);
