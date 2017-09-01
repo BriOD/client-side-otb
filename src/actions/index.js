@@ -47,22 +47,6 @@ export function deleteMenuItem(id) {
 
 export function likeMenuItem(id, likes) {
 
-//   patch(url, data ={}, token) {
-//   const body = JSON.stringify(data)
-//
-//   const headers =  {
-//     'Accept': 'application/json',
-//     'Content-Type': 'application/json',
-//     'Authorization': `Bearer: ${token}`
-//   }
-//
-//   return fetch(`${BASE_URL}${url}`, {
-//     method: 'PATCH',
-//     headers: headers,
-//     body: body
-//   })
-//   .then(parseResponse)
-// },
 
   const request = axios.patch(`http://localhost:3001/api/menu_items/${id}`,{
     likes: likes

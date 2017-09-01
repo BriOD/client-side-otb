@@ -3,19 +3,26 @@ import _ from 'lodash';
 import { connect } from 'react-redux';
 import { fetchMenuItems } from '../actions'
 import { CSSTransitionGroup } from 'react-transition-group'
-
 import MenuItem from '../components/menuItem';
-
 import '../style/style.css'
-
-
 class MenuItemsDashboard extends Component {
 
 
   componentDidMount(){
     this.props.fetchMenuItems();
   }
-  renderMenuItems() {
+
+  mostLikedItems = () => {
+    //take list of items, and sort them by most liked.
+    const sortedArray = this.props.menuItems.sort((a, b) => {
+      return b.likes - a.likes
+    });
+    console.log(sortedArray)
+  }
+
+  renderMenuItems = () => {
+
+
     return _.map(this.props.menuItems, item => {
       return (
         <MenuItem
@@ -47,6 +54,7 @@ class MenuItemsDashboard extends Component {
                 {this.renderMenuItems()}
             </CSSTransitionGroup>
           </div>
+          <button onClick={this.mostLikedItems}>sort</button>
         </div>
       </div>
     );
